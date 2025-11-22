@@ -90,33 +90,6 @@ Context:
 Keep answers short, friendly, and helpful.
 `;
 
-export const TEAM_MEMBERS = [
-  { 
-    name: "Simon L.", 
-    role: "Finance", 
-    desc: "Financial strategy & business operations", 
-    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=400&q=80" // Blue hoodie lookalike
-  },
-  { 
-    name: "Bogdan", 
-    role: "Branding & Product", 
-    desc: "Product design & brand strategy", 
-    image: "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?auto=format&fit=crop&w=400&q=80" // White shirt lookalike
-  },
-  { 
-    name: "Simon M.", 
-    role: "Partnerships", 
-    desc: "Campus outreach & vendor relations", 
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" // Blue polo/outdoors lookalike
-  },
-  { 
-    name: "Arnd", 
-    role: "CTO", 
-    desc: "App development & data analytics expert", 
-    image: "https://images.unsplash.com/photo-1520341280432-4749d4d7bcf9?auto=format&fit=crop&w=400&q=80" // Cap/Hoodie lookalike
-  }
-];
-
 export const MARKET_STATS = [
   { label: "Market Value (2025)", value: "$2.48B" },
   { label: "Annual Growth", value: "17.4%" },

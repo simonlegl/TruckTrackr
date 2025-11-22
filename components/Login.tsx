@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Menu, MapPin, Clock, Star, TrendingUp, Smartphone, Globe, Users, DollarSign, CheckCircle } from 'lucide-react';
 import { Logo } from './Logo';
-import { TEAM_MEMBERS, MARKET_STATS, UPCOMING_EVENTS } from '../constants';
+import { MARKET_STATS, UPCOMING_EVENTS } from '../constants';
 
 interface LoginProps {
   onLogin: (role: 'STUDENT' | 'VENDOR') => void;
@@ -30,7 +30,6 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <div className="hidden md:flex items-center gap-8 font-medium text-sm">
              <a href="#features" className="hover:text-brand-yellow transition-colors">Features</a>
              <a href="#vendors" className="hover:text-brand-yellow transition-colors">For Vendors</a>
-             <a href="#team" className="hover:text-brand-yellow transition-colors">Team</a>
              <button 
                 onClick={() => onLogin('VENDOR')}
                 className="px-6 py-2 bg-brand-blue text-white rounded-full hover:bg-blue-900 transition-colors shadow-lg"
@@ -363,29 +362,6 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                           </ul>
                       </div>
                   </div>
-              </div>
-          </div>
-      </div>
-
-      {/* Team Section */}
-      <div id="team" className="py-24 bg-gray-50">
-          <div className="container mx-auto px-6 text-center">
-              <h2 className="text-4xl font-black text-brand-blue mb-4">Meet the Team</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto mb-16">
-                  Passionate students bridging the gap between technology, business strategy, and delicious food.
-              </p>
-              
-              <div className="grid md:grid-cols-4 gap-8">
-                  {TEAM_MEMBERS.map((member, i) => (
-                      <div key={i} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
-                          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-brand-yellow group-hover:border-brand-blue transition-colors">
-                              <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                          </div>
-                          <h3 className="font-bold text-xl text-gray-900">{member.name}</h3>
-                          <p className="text-brand-blue font-medium text-sm mb-3">{member.role}</p>
-                          <p className="text-gray-500 text-xs leading-relaxed">{member.desc}</p>
-                      </div>
-                  ))}
               </div>
           </div>
       </div>
