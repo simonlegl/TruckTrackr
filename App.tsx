@@ -1,6 +1,5 @@
-
-import React, { useState, useEffect } from 'react';
-import { Home, Map, ShoppingBag, User as UserIcon, ArrowLeft, Star, Clock, MapPin, Heart, Plus, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Home, ShoppingBag, User as UserIcon, ArrowLeft, Clock, Heart, Plus, CheckCircle } from 'lucide-react';
 import { MOCK_TRUCKS } from './constants';
 import { FoodTruck, ViewState, UserProfile, OrderItem } from './types';
 import { Login } from './components/Login';

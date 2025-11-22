@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Briefcase, ArrowRight, Menu, MapPin, Clock, Star, TrendingUp, Shield, Smartphone, Globe, Users, DollarSign, CheckCircle, ChevronDown, Calendar } from 'lucide-react';
+import { ArrowRight, Menu, MapPin, Clock, Star, TrendingUp, Smartphone, Globe, Users, DollarSign, CheckCircle } from 'lucide-react';
 import { Logo } from './Logo';
 import { TEAM_MEMBERS, MARKET_STATS, UPCOMING_EVENTS } from '../constants';
 
@@ -8,7 +8,6 @@ interface LoginProps {
 }
 
 export const Login: React.FC<LoginProps> = ({ onLogin }) => {
-  const [activeTab, setActiveTab] = useState<'STUDENT' | 'VENDOR'>('STUDENT');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
