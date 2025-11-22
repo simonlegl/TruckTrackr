@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy TruckTrackr to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches: ["main"]     # bei jedem Push auf main deployen
+  workflow_dispatch:        # optional: manuell auslösbar
 
 permissions:
   contents: read
@@ -17,27 +17,27 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: 20        # passt für Vite/React
+          # kein cache: npm -> sonst lockfile-Fehler
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install          # funktioniert ohne package-lock.json
 
-      - name: Build
-        run: npm run build
+      - name: Build app
+        run: npm run build        # erzeugt standardmäßig ./dist bei Vite
 
-      - name: Upload artifact
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # falls dein Build-Ordner anders heißt, hier anpassen
-          path: ./dist
+          path: ./dist            # falls dein Build-Ordner anders heißt -> anpassen
 
   deploy:
     needs: build
@@ -45,6 +45,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
