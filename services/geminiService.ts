@@ -1,6 +1,14 @@
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from "../constants";
 
+// Explicitly declare process to avoid type errors during build if @types/node isn't picked up immediately
+declare const process: {
+  env: {
+    API_KEY?: string;
+    [key: string]: string | undefined;
+  }
+};
+
 let chatSession: Chat | null = null;
 
 const getAiClient = () => {

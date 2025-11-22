@@ -12,12 +12,6 @@ const REVENUE_DATA = [
   { name: 'Sun', sales: 3490 },
 ];
 
-const SUBSCRIPTION_TIERS = [
-  { name: 'Basic', price: 49, features: 'Analytics' },
-  { name: 'Premium', price: 99, features: 'Live Support' },
-  { name: 'Enterprise', price: 149, features: 'Account Manager' },
-];
-
 export const VendorDashboard: React.FC = () => {
   return (
     <div className="p-4 md:p-8 pb-24 space-y-8 bg-gray-50 min-h-screen">
@@ -97,7 +91,12 @@ export const VendorDashboard: React.FC = () => {
             <BarChart data={REVENUE_DATA}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#9ca3af'}} dy={10} />
-              <YAxis axisLine={false} tickLine={false} tick={{fill: '#9ca3af'}} prefix="$" />
+              <YAxis 
+                axisLine={false} 
+                tickLine={false} 
+                tick={{fill: '#9ca3af'}} 
+                tickFormatter={(value) => `$${value}`} 
+              />
               <Tooltip 
                 contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
                 cursor={{fill: '#f3f4f6'}}
